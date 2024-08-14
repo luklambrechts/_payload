@@ -96,7 +96,6 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
           if (!block || !blockType) {
             return null
           }
-
         } else {
           switch (node.type) {
             case 'linebreak': {
@@ -156,11 +155,11 @@ export function serializeLexical({ nodes }: Props): JSX.Element {
               )
             }
 
-
             default:
               return null
           }
         }
+        return null
       })}
     </Fragment>
   )

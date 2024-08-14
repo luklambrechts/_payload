@@ -50,6 +50,7 @@ export default async function Page({ params: { slug = 'index' } }) {
   if (!page) {
     return notFound()
   }
+  
   return (
     <div className="pt-16 pb-24">
       <RenderBlocks blocks={page.layout} />

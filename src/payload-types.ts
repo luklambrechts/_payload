@@ -92,41 +92,13 @@ export interface Page {
   id: string;
   name: string;
   slug: string;
-  layout: (
-    | {
-        title: string;
-        subtitle: string;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'cover';
-      }
-    | {
-        content: {
-          root: {
-            type: string;
-            children: {
-              type: string;
-              version: number;
-              [k: string]: unknown;
-            }[];
-            direction: ('ltr' | 'rtl') | null;
-            format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-            indent: number;
-            version: number;
-          };
-          [k: string]: unknown;
-        };
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'richText';
-      }
-    | {
-        image: string | Media;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'image';
-      }
-  )[];
+  layout: {
+    title: string;
+    subtitle: string;
+    id?: string | null;
+    blockName?: string | null;
+    blockType: 'cover';
+  }[];
   updatedAt: string;
   createdAt: string;
 }

@@ -6,8 +6,8 @@ import React, { Fragment } from 'react'
 
 const blockComponents = {
   cover: CoverBlockServer,
-  image: ImageBlockServer,
-  richText: RichTextBlockServer
+  // image: ImageBlockServer,
+  // richText: RichTextBlockServer,
 }
 
 export const RenderBlocks: React.FC<{ blocks: Page['layout'][0][] }> = (props) => {
@@ -24,6 +24,7 @@ export const RenderBlocks: React.FC<{ blocks: Page['layout'][0][] }> = (props) =
             if (Block) {
               return (
                 <div className="my-16" key={index}>
+                  {/* this problem with Block disappears when we omit image in the blockComponent */}
                   <Block id={blockName} {...block} />
                 </div>
               )
